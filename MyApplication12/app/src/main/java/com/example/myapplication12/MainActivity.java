@@ -46,22 +46,64 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        Button button = (Button)findViewById(R.id.button4);
+        Button button = (Button) findViewById(R.id.buttontopleft);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 Intent i = new Intent(MainActivity.this, DisplayMessageActivity.class);
                 startActivity(i);
+                finish();
+            }
+        });
+        Button buttonLb = (Button) findViewById(R.id.buttontopmid);
+         buttonLb.setOnClickListener(new View.OnClickListener() {
+             public void onClick(View v) {
+
+                 Intent i = new Intent(MainActivity.this, leaderboard.class);
+                 startActivity(i);
+                 finish();
+             }
+         });
+        Button buttonTr = (Button) findViewById(R.id.buttontopright);
+        buttonTr.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent i = new Intent(MainActivity.this, leaderboard.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        Button buttonMl = (Button) findViewById(R.id.buttonmidleft);
+        buttonMl.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent i = new Intent(MainActivity.this, Points.class);
+                startActivity(i);
+                finish();
             }
         });
     }
 
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-    }
 
-}
+
+            public void sendMessage(View view) {
+                Intent intent = new Intent(MainActivity.this, DisplayMessageActivity.class);
+                EditText editText = (EditText) findViewById(R.id.editText);
+                String message = editText.getText().toString();
+                intent.putExtra(EXTRA_MESSAGE, message);
+                startActivity(intent);
+            }
+            public void sendinfo(View view) {
+                Intent intent = new Intent(MainActivity.this, leaderboard.class);
+                EditText editText = (EditText) findViewById(R.id.editText);
+                String message = editText.getText().toString();
+                intent.putExtra(EXTRA_MESSAGE, message);
+                startActivity(intent);
+            }
+        }
+
+
+
+
+
