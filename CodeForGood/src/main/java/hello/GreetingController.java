@@ -16,4 +16,8 @@ public class GreetingController {
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }
+    @RequestMapping("/avatar")
+    public Avatar avatar(){
+        return new Avatar("long","brown", "black", "white", "red","black");
+    }
 }
